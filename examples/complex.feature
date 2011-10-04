@@ -23,7 +23,6 @@ Feature: Complex Addition
 			| number1 | number2 | number3 |
 			| 10      | 20      | 150     |
 			| 20      | 40      | 180     |
-			| 40      | 60      | 220     |
 			
 	Scenario: Add two numbers
 		Given I have entered 50 into the calculator
