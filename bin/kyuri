@@ -95,13 +95,19 @@ directories.forEach(function (top) {
 
 var complete = false;
 
-kyuri.runners.cucumber.run(features, steps, function (err) {
-  if (err) {
-    console.log('Errors');
+try {
+  kyuri.runners.cucumber.run(features, steps, function () {
+    complete = true;
+  });
+} catch (err) {
+  console.log('Errors');
+  if (err.stack) {
+    console.log(err.stack);
+  } else {
     console.log(err);
-  }
+  } 
   complete = true;
-});
+}
 
 var _waitComplete = function () {
   if (!complete) {
