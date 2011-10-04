@@ -48,7 +48,6 @@ var _loadJavascripts = function (directory, steps) {
           if (!fullPath.match(/^\//)) {
             fullPath = path.join(root, fullPath);
           }
-          console.log('Loaded ' + fullPath);
           exported = require(fullPath);
           if (exported && exported.forEach && steps) {
             exported.forEach(function (obj) {
